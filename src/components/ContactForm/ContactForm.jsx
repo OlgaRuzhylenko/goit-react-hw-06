@@ -13,7 +13,7 @@ export default function ContactForm({ onAdd }) {
       name: values.username,
       number: values.usernumber,
     };
-    dispatch(addContact(Form.elements.name.value))
+    dispatch(addContact(newContact.name, newContact.number))
     onAdd(newContact);
     actions.resetForm();
   };
