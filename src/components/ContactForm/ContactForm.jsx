@@ -1,8 +1,11 @@
 import { Formik, Form, Field } from "formik";
 import { nanoid } from "nanoid";
+import { useDispatch, useSelector } from "react-redux";
 import css from "./ContactForm.module.css";
 
 export default function ContactForm({ onAdd }) {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
     const newContact = {
       id: nanoid(),
@@ -30,7 +33,7 @@ export default function ContactForm({ onAdd }) {
           <Field name="usernumber" />
         </div>
 
-        <button type="submit" className={css.formBtn}>
+        <button type="submit" className={css.formBtn} >
           Add contact
         </button>
       </Form>
