@@ -5,7 +5,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import {selectContacts} from '../../redux/contactsSlice'
 import { useSelector } from 'react-redux';
 
-export default function ContactList({onDelete }) {
+export default function ContactList() {
   const reduxContacts = useSelector(selectContacts);
   return (
     <ul>
@@ -16,11 +16,11 @@ export default function ContactList({onDelete }) {
           <ContactListItem
             name={contact.name}
             number={contact.number}
-            onDelete={onDelete}
+            // onDelete={onDelete}
             id={contact.id}
           />
 
-          {/* <ContactListItem data={contact} /> */}
+         
         </li>
       ))}
     </ul>

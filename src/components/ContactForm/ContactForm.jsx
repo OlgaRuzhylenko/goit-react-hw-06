@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import css from "./ContactForm.module.css";
 import {addContact} from '../../redux/contactsSlice'
 
-export default function ContactForm({ onAdd }) {
+export default function ContactForm() {
   const dispatch = useDispatch();
   
   const handleSubmit = (values, actions) => {
@@ -14,7 +14,7 @@ export default function ContactForm({ onAdd }) {
       number: values.usernumber,
     };
     dispatch(addContact(newContact.name, newContact.number))
-    onAdd(newContact);
+    // onAdd(newContact);
     actions.resetForm();
   };
   return (

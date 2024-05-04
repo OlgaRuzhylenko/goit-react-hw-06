@@ -5,7 +5,8 @@ import css from "./ContactListItem.module.css";
 export default function ContactListItem({ name, number, id}) {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id))
-  console.log(deleteContact(id));  return (
+ 
+  return (
     <div>
       <h1>{name}</h1>
       <p>{number}</p>
