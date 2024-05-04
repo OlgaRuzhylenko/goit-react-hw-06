@@ -2,11 +2,14 @@ import ContactListItem from "../ContactListItem/ContactListItem";
 import css from "./ContactList.module.css";
 import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import {selectContacts} from '../../redux/contactsSlice'
+import { useSelector } from 'react-redux';
 
-export default function ContactList({ contacts, onDelete }) {
+export default function ContactList({onDelete }) {
+  const reduxContacts = useSelector(selectContacts);
   return (
     <ul>
-      {contacts.map((contact) => (
+      {reduxContacts.map((contact) => (
         <li key={contact.id} className={css.item}>
           <BsFillPersonFill />
           <BsFillTelephoneFill />

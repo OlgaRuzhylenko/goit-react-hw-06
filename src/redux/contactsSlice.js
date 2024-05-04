@@ -36,6 +36,8 @@ const contactsSlice = createSlice({
 export const {addContact, deleteContact} = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
 
+export const selectContacts  = (state) => state.contacts;
+
 
 // const contactsInitialState = [
 //     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
